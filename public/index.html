@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nisa, Aakriti, Edward's Assignment 1</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisa, Aakriti, Edward' Assignment 1</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">    
+    <link rel='stylesheet' type='text/css' href="style.css">
+    <script type="text/javascript" src="script.js"></script> 
+
   </head>
+
   <body>
-    <div class="queryFinder">
-
-      <h1>Assignment 1: Nisa Putri, Aakriti Khanal, Edward Hinton</h1>
-
-      <form class="searchForm">
-          <label for="search">Search</label>
-          <input type="text" name="search" id="search"></input>
-        </form>
-
-    </div>
+    <h1>
+        Assignment 1 
+        <br>Nisa Putri <br>Aakriti Khanal <br>Edward Hinton
+      </h1>
+    <form class="search-form">
+ 
+      <input type='text' class="SearchBar" placeholder="Restaurants by type, name, or zipcode">
+      
+      
+      <div id='SearchContainer'>
+      <ul class='ListOfRestaurants'>
+        <li>Filter by name</li>
+        <li>or type</li>
+        <li>or zipcode</li>
+      </ul>
+      
+      </div>
+    </form>
   </body>
-  <script src="script.js"></script>
+
 </html>

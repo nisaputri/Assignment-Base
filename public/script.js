@@ -1,29 +1,37 @@
-async function windowActions() {
-    console.log("Window Loaded");
+const data = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+const user_input = document.querySelector('SearchBar');
+const restaurant_list = document.querySelector('.ListOfRestaurants');
+const restaurant_type = [];
+    
+fetch(endpoint) 
+  .then(res => res.json()) 
+  .then(data => restaurant_type.push(...data));
 
-    const search = document.querySelector('#search');
-    const form = document.querySelector('.searchForm');
+function findMatches(wordToMatch, restaurant_type) {
+    return restaurant_type.filter(place => {
+      const regex = new RegExp(wordToMatch, 'gi');
+      return place.restaurant_type.match(regex) || place.zipcode.match(regex);
+    });
+  }
 
-    const request = await fetch('/api');
-    const data = await request.json();
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
 
+  function displayMatches() {
+    const matchArray = findMatches(this.value, restaurant_type);
+    const html = matchArray.map(place => {
+      const regex = new RegExp(this.value, 'gi');
+      const restaurantName = place.restaurant.replace(regex, `<span class="hl">${this.value}</span>`);
+      const Zipcode = place.zipcode.replace(regex, `<span class="hl">${this.value}</span>`);
+      return `
+        <li>
+          <span class="name">${restaurantName}, ${Zipcode}</span>
+          
+        </li>`
+    }).join('');
+    suggestions.innerHTML = html;
+  }
 
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        console.log('submitted query is', search.value);
-        console.log('data quantity (should be 1000)', data.length)
-        const display = data.filter((record) => {
-            const val = search.value;
-            const zip = record.zip;
-            return zip.includes(val)
-        });
-        console.log('filtered data,', display)
-    })
-
-
-
-
-
-}
-
-window.onload = windowActions;
+  searchInput.addEventListener('change', displayMatches);
+  searchInput.addEventListener('keyup', displayMatches);
