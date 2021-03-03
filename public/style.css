@@ -4,10 +4,6 @@ body {
     background-color: rgb(193, 163, 218);
 }
 
-<<<<<<< Updated upstream
-h1 {
-  font-size: 1.17em;
-=======
 html {
     font-size: 11px;
 }
@@ -16,7 +12,6 @@ html {
   font-size: 1.2em;
   color:rgb(53, 7, 126);
   display: inline;
->>>>>>> Stashed changes
 }
 
 .MainContainer {
@@ -41,8 +36,6 @@ html {
   display: flex;
 }
 
-<<<<<<< Updated upstream
-=======
 input {
     width: 75%;
     padding: 10px 10px;
@@ -101,4 +94,3 @@ input {
     }
     
   }
->>>>>>> Stashed changes
