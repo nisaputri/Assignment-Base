@@ -34,4 +34,4 @@ function displayMatches() {
 const searchInput = document.querySelector('.SearchBar')
 const suggestions = document.querySelector('.ListOfRestaurants')
 
-searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
