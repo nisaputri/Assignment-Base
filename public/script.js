@@ -1,22 +1,24 @@
-const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-const restaurants = [];
+async function windowAction() {
 
-fetch(endpoint)
-.then(blob => blob.json())
-.then(data => restaurants.push(...data));
+  const request = await fetch("/api")
+  const restaurants = await request.json()
 
-function findMatches(wordToMatch, restaurants) {
-    return restaurants.filter(place => {
-
-    const regex = new RegExp(wordToMatch, 'gi');
-    return place.name.match(regex) || place.zip.match(regex) || place.category.match(regex) 
+  function findMatches(wordToMatch, restaurants) {
+    return restaurants.filter((place) => {
+      const regex = new RegExp(wordToMatch, "gi");
+      return (
+        place.name.match(regex) ||
+        place.zip.match(regex) ||
+        place.category.match(regex)
+      );
     });
-}
+  }
 
-//this code shows the display that matches the user's input
-function displayMatches() {
-    const matchArray = findMatches(this.value, restaurants)
-    const html = matchArray.map(place => {
+  //this code shows the display that matches the user's input
+  function displayMatches(event) {
+    const matchArray = findMatches(event.target.value, restaurants);
+    const html = matchArray
+      .map((place) => {
         return `<li>
         <span class="name"><b>${place.name}</b></span><br>
         <span class="category"><b>${place.category}</b></span>
@@ -27,11 +29,21 @@ function displayMatches() {
         <b>${place.type}</b><address>
         <b>${place.owner}</b><address>
       </li>`;
-    }).join('');
+      })
+      .join("");
     suggestions.innerHTML = html;
+  }
+
+  const searchInput = document.querySelector(".SearchBar");
+  const suggestions = document.querySelector(".ListOfRestaurants");
+  const form = document.querySelector(".userform");
+
+
+  form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      console.log('checking');
+    displayMatches(e);
+  });
 }
 
-const searchInput = document.querySelector('.SearchBar')
-const suggestions = document.querySelector('.ListOfRestaurants')
-
-searchInput.addEventListener('keyup', displayMatches);
+window.onload = windowAction;
