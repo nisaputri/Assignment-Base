@@ -1,9 +1,9 @@
 const data = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-const user_input = document.querySelector('SearchBar');
+const user_input = document.querySelector('.SearchBar');
 const restaurant_list = document.querySelector('.ListOfRestaurants');
 const restaurant_type = [];
     
-fetch(endpoint) 
+fetch(data) 
   .then(res => res.json()) 
   .then(data => restaurant_type.push(...data));
 
@@ -33,5 +33,5 @@ function findMatches(wordToMatch, restaurant_type) {
     suggestions.innerHTML = html;
   }
 
-  searchInput.addEventListener('change', displayMatches);
-  searchInput.addEventListener('keyup', displayMatches);
+  user_input.addEventListener('change', displayMatches);
+  user_input.addEventListener('keyup', displayMatches);
