@@ -13,6 +13,7 @@ function findMatches(wordToMatch, restaurants) {
     });
 }
 
+//this code shows the display that matches the user's input
 function displayMatches() {
     const matchArray = findMatches(this.value, restaurants)
     const html = matchArray.map(place => {
@@ -21,7 +22,10 @@ function displayMatches() {
         <span class="category"><b>${place.category}</b></span>
         <address><b>${place.address_line_1}</b><br>
         <b>${place.city}</b><br>
+        <b>${place.state}</b><br>
         <b>${place.zip}</b><address>
+        <b>${place.type}</b><address>
+        <b>${place.owner}</b><address>
       </li>`;
     }).join('');
     suggestions.innerHTML = html;

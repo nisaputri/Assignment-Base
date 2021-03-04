@@ -12,8 +12,11 @@ html {
 
 .header {
   font-size: 2em;
-  color:rgb(53, 7, 126);
+  color: rgb(33, 6, 77);
   display: inline;
+  font-family: 'Autour One', cursive;
+  font-size: 50px;
+
 }
 
 label {
@@ -31,7 +34,7 @@ label {
 }
 
 .SearchBar {
-    width: 230px;
+    width: 300px;
     height: 30px;
     
 }
