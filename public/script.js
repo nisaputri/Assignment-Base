@@ -1,6 +1,6 @@
 async function windowAction() {
-
-  const request = await fetch("/api")
+ 
+  const request = await fetch('/api')
   const restaurants = await request.json()
 
   function findMatches(wordToMatch, restaurants) {
@@ -36,12 +36,9 @@ async function windowAction() {
 
   const searchInput = document.querySelector(".SearchBar");
   const suggestions = document.querySelector(".ListOfRestaurants");
-  const form = document.querySelector(".userform");
 
-
-  form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      console.log('checking');
+  searchInput.addEventListener("keyup", (e) => {
+      console.log('LOADING...');
     displayMatches(e);
   });
 }
