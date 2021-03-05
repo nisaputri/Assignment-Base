@@ -20,7 +20,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.route('/api')
   .get(async (req, res) => {
     console.log('GET request detected');
@@ -31,11 +30,9 @@ app.route('/api')
   })
   .post(async (req, res) => {
     console.log('POST request detected');
-    console.log('Form data in res.body', req.body);
-
-    
+    console.log('Form data in res.body', req.body); 
   });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
-});
+}); 
