@@ -1,25 +1,41 @@
 body {
     color: black;
     padding: 50px 0;
-    background-color: lightblue;
+    background-color: rgb(193, 163, 218);
+    text-align: center;
+    margin: 0px;
 }
 
-h1 {
-  font-size: 1.17em;
+html {
+    font-size: 11px;
+}
+
+.header {
+  color: rgb(33, 6, 77);
+  display: inline;
+  font-family: 'Autour One', cursive;
+  font-size: 30px;
+  text-align: center;
+
+
+}
+
+label {
+  font-size: 20px;
 }
 
 .MainContainer {
-    width: 100%;
     max-width: 960px;
-    margin: auto;
+    min-height: 100%;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .SearchBar {
-    width: 230px;
+    width: 300px;
     height: 30px;
     
 }
@@ -29,3 +45,61 @@ h1 {
   align-items: center;
   display: flex;
 }
+
+input {
+    width: 75%;
+    padding: 10px 10px;
+    margin: 10px 5px;
+    box-sizing: border-box;
+    background-color:rgb(220, 217, 245);
+  }
+
+  #SearchBar {
+    width: 500px;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#SearchContainer {
+  position: relative;
+}
+
+#SearchContainer ul{
+  width: 500px;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+}
+
+#SearchContainer li{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #693fdd 0%, #ec3535 100%);
+  display: block;
+}
+
+.ListOfRestaurants {
+  border-top: 1px solid red ;
+  margin-bottom: 100px;
+}
+
+  @media (min-width: 1000px){
+    h1 {
+      font-size: 5rem;
+    }
+    .first-half.page {
+      width: 48%;
+    }
+    .column:first-child, .columns:first-child {
+      margin-left: 0px;
+    }
+    
+  }

@@ -7,31 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nisa, Aakriti, Edward' Assignment 1</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">    
-    <link rel='stylesheet' type='text/css' href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">   
+    <link rel='stylesheet' type='text/css' href="style.css"> 
 
   </head>
-
+  
   <body>
-    <h1>
-        Assignment 1 
-        <br>Nisa Putri <br>Aakriti Khanal <br>Edward Hinton
+    <div class='MainContainer'>
+    <div class='list'>
+        <div class='first-half page' style='margin-top: 10%; bottom:10%;'>
+      <h1 class='header'>
+        Assignment 1: 
+        <br>1. Nisa Putri <br> 2. Aakriti Khanal <br> 3. Edward Hinton
       </h1>
-    <form class="search-form">
- 
-      <input type='text' class="SearchBar" placeholder="Restaurants by type, name, or zipcode">
-      
+
+      <form  class='userform'>
+          <label for="search"></label>
+      <input type='text' class='SearchBar' name="SearchBar" id="SearchBar" placeholder="Search restaurants by type, name, or zipcode"></input>
+    </form>    
+    </div>
       
       <div id='SearchContainer'>
-      <ul class='ListOfRestaurants'>
-        <li>Filter by name</li>
-        <li>or type</li>
-        <li>or zipcode</li>
-      </ul>
-      
+      <ul class='ListOfRestaurants'></ul>
       </div>
-    </form> 
-    <script type="text/javascript" src="script.js"></script> 
+      <script type="text/javascript" src="script.js"></script> 
   </body>
 
 </html>
