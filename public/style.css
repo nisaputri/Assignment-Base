@@ -11,11 +11,12 @@ html {
 }
 
 .header {
-  font-size: 2em;
   color: rgb(33, 6, 77);
   display: inline;
   font-family: 'Autour One', cursive;
-  font-size: 50px;
+  font-size: 30px;
+  text-align: center;
+
 
 }
 
@@ -50,7 +51,7 @@ input {
     padding: 10px 10px;
     margin: 10px 5px;
     box-sizing: border-box;
-    background-color:rgb(182, 176, 238);
+    background-color:rgb(220, 217, 245);
   }
 
   #SearchBar {
